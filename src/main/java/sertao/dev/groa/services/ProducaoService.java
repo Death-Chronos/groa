@@ -16,4 +16,8 @@ public class ProducaoService {
     public List<Producao> findAll(){
         return pr.findAll();
     }
+
+    public void save(Producao producao){
+        pr.save(producao);
+    }
 }
