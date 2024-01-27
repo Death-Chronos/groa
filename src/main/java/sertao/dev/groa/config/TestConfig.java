@@ -18,9 +18,9 @@ public class TestConfig implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Producao prod1 = new Producao(null,"Manga", LocalDate.of(12,10,22),20f,12f,8f);
-        Producao prod2 = new Producao(null,"Batata", LocalDate.of(12,10,22),20f,12f,8f);
-        Producao prod3 = new Producao(null,"Pera", LocalDate.of(12,10,22),20f,12f,8f);
+        Producao prod1 = new Producao(null,"Manga", LocalDate.of(2012,10,22),20f,12f,8f);
+        Producao prod2 = new Producao(null,"Batata", LocalDate.of(2012,10,22),20f,12f,8f);
+        Producao prod3 = new Producao(null,"Pera", LocalDate.of(2012,10,22),20f,12f,8f);
 
         pr.saveAll(Arrays.asList(prod1,prod2,prod3));
     }

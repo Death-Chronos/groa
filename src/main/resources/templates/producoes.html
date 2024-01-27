@@ -37,7 +37,7 @@
 
       <tbody>
         <tr th:each="prod: ${producoes}">
-          <td th:text="${prod.data}">12/08/2022</td>
+          <td th:text="${#temporals.format(prod.data,'dd/MMMM/yyyy')}">12/08/2022</td>
           <td th:text="${prod.nome}">Manga</td>
           <td th:text="${prod.pesoBruto}">40</td>
           <td th:text="${prod.pesoRefugo}">20</td>
