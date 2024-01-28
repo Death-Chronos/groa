@@ -9,7 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 import sertao.dev.groa.entities.Producao;
 import sertao.dev.groa.services.ProducaoService;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Controller
@@ -32,9 +31,10 @@ public class ProducaoController {
         return mv;
     }
 
-    @PostMapping("/salvarProducao")
-    public void salvarProducao(Producao producao) {
+    @PostMapping("producao/salvar")
+    public String salvarProducao(Producao producao) {
         ps.save(producao);
+        return "redirect:/groa/producao";
     }
     
 

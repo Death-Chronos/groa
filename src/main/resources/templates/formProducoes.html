@@ -5,18 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" th:href="@{/css/formProducoes.css}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/formProducoes.css}">
+
     <title>Formulário de Produções</title>
 </head>
 
 <body>
-    <div class="container">
+    <div th:replace="~{componentes/nav :: navegador}"></div>
+
+    <div class="container form">
+        <h2>Formulário de Produções</h2>
+
         <div class="row">
-            <form class="col s12" action="/groa/salvarProducao" th:object="${producao}">
+            <form class="col s12" action="/groa/producao/salvar" th:object="${producao}" method="post">
                 <div class="row">
                     <div class="input-field col s6">
-                        <input type="datetime" id="data" class="validate" th:field="*{data}">
+                        <input type="date" id="data" class="validate" th:field="*{data}">
                         <label for="data">Data</label>
                     </div>
                     <div class="input-field col s6">
@@ -34,11 +40,19 @@
                         <label for="pesoRefugo">Peso de Refugo</label>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row venda">
                     <div class="input-field col s6">
                         <input id="pesoVenda" type="number" th:field="*{pesoVenda}" class="validate">
                         <label for="pesoVenda">Peso para Venda</label>
                     </div>
+                </div>
+                <div class="botoes">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <button class="btn waves-effect waves-light" type="reset" name="action">Cancelar
+                        <i class="material-icons right">cancel</i>
+                    </button>
                 </div>
             </form>
         </div>
